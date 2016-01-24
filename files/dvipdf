@@ -1,0 +1,18 @@
+#!/bin/bash
+#echo $@ >> /mylog/dvipdfargs
+if [ $# -eq 2 ]; then
+  #{
+  #echo "dvipdf wrapper: 2 args detected."
+  dvipdfmx -f /var/www/sharelatex/texfonts.map -o $2 $1
+  #} > /mylog/dvipdf 2>&1
+elif [ $# -eq 1 ]; then
+  #{
+  #echo "dvipdf wrapper: 1 arg detected."
+  dvipdfmx -f /var/www/sharelatex/texfonts.map $1
+  #} > /mylog/dvipdf 2>&1
+else
+  #{
+  #echo "dvipdf wrapper: 0 args detected."
+  dvipdf.org $@
+  #} > /mylog/dvipdf 2>&1
+fi
