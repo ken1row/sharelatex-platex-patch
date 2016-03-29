@@ -52,7 +52,7 @@ if __name__ == '__main__':
         if ifbackup:
             if os.path.exists(backup):
                 status('  Backup skipped. Backup file already exists.')
-            else if not os.path.exists(dst):
+            elif not os.path.exists(dst):
                 status('  Backup skipped. There is no destination file.')
             else:
                 status('  Copying the original file...')
