@@ -181,6 +181,21 @@ if __name__ == '__main__':
         else:
             status('Applying a patch for ' + f)
             patch(src, dst, backup)
+    # bibtex and pbibtex
+    src = os.path.join('files', 'mypbibtex')
+    dst = os.path.join(args.tex, 'bibtex')     
+    backup = os.path.join(args.tex, 'bibtex.org')      
+    if args.unpatch:  
+        status('Restoreing bibtex')
+        if not args.simulation:
+            unpatch(src, dst, backup)
+    else:
+        status('Replacing pbibtex.')
+        if not args.simulation:    
+            # patch(src, dst, backup)
+            subprocess.check_call(['cp', dst, backup])
+            subprocess.check_call(['rm', dst])
+            subprocess.check_call(['cp', src, dst])
             
     f = 'texfonts.map'
     src = os.path.join('files', f)

@@ -1,0 +1,4 @@
+#!/bin/bash
+pbibtex $@
+sed -i -e 's/\^^ef^^bf^^bdC/，/g' $1.bbl 
+sed -i -e 's/\^^ef^^bf^^bdF/\：/g' $1.bbl
