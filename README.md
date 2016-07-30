@@ -1,6 +1,8 @@
 # sharelatex-platex-patch
 ShareLatex のコンパイラに platex を設定するなど，日本語論文に対応するためのパッチ．
 
+解説記事はこちら --> http://ken1row.net/archives/47
+
 # クイックスタート
 すべてのファイルを，ShareLatex ディレクトリにコピーする
 ```
